@@ -13,23 +13,17 @@ plugins {
 kotlin {
     androidTarget()
 
-    iosX64()
-    iosArm64()
-    iosSimulatorArm64()
 
     listOf(
         iosX64(),
         iosArm64(),
-        iosSimulatorArm64()
+        iosSimulatorArm64(),
     ).forEach {
         it.binaries.framework {
-            isStatic = true
             baseName = "shared"
-//            export("dev.icerock.moko:resources:0.23.0")
-//            export("dev.icerock.moko:resources-compose:0.23.0")
-
         }
     }
+
 
    val myAttribute = Attribute.of("myOwnAttribute", String::class.java)
 
@@ -136,7 +130,7 @@ kotlin {
 
 android {
     compileSdk = (findProperty("android.compileSdk") as String).toInt()
-    namespace = "com.bn.store.kmp"
+    namespace = "com.bn.web.view"
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     sourceSets["main"].res.srcDirs("src/androidMain/res")
