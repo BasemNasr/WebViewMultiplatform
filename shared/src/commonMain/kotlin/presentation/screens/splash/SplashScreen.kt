@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
@@ -26,8 +25,6 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
-import org.koin.compose.koinInject
-import presentation.screens.auth.login.LoginScreen
 import presentation.screens.main.MainScreen
 import presentation.theme.BOLD_SILVER_BACKGROUND_COLOR
 import presentation.theme.PrimaryColor
@@ -43,11 +40,7 @@ class SplashScreen : Screen {
 
 
 @Composable
-fun SplashScreenContent(navigator: Navigator? = null,
-                         viewModel:SplashViewModel = koinInject()) {
-
-
-    val isLogin = viewModel?.isLogin?.collectAsState()
+fun SplashScreenContent(navigator: Navigator? = null) {
 
     val scale = remember {
         Animatable(0f)
@@ -62,15 +55,7 @@ fun SplashScreenContent(navigator: Navigator? = null,
         )
 
         delay(10L)
-        when(isLogin?.value){
-            true->{
-                navigator?.push(MainScreen)
-            }
-            false->{
-                navigator?.push(LoginScreen)
-            }
-            else->{}
-        }
+        navigator?.push(MainScreen)
     })
     SplashAnimationWithContent()
 }
@@ -79,7 +64,7 @@ fun SplashScreenContent(navigator: Navigator? = null,
 @OptIn(ExperimentalResourceApi::class)
 @Composable
 fun SplashAnimationWithContent() {
-    val logo = painterResource("compose-multiplatform.xml")
+    val logo = painterResource("logo.xml")
     val angle1Y = remember {
         Animatable(20f)
     }

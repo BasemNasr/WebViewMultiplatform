@@ -89,18 +89,12 @@ kotlin {
                 implementation("io.insert-koin:koin-compose:1.0.4")
 
                 // Voyager
-//                implementation("cafe.adriel.voyager:voyager-koin:$voyagerVersion")
                 implementation("cafe.adriel.voyager:voyager-navigator:$voyagerVersion")
                 implementation("cafe.adriel.voyager:voyager-tab-navigator:$voyagerVersion")
                 implementation("cafe.adriel.voyager:voyager-transitions:$voyagerVersion")
 
-//                implementation("dev.icerock.moko:resources:0.23.0")
-//                implementation("dev.icerock.moko:resources-compose:0.23.0") // for compose multiplatform
-//                implementation("dev.chrisbanes.material3:material3-window-size-class-multiplatform:0.3.1")
 
-                implementation("androidx.datastore:datastore-preferences-core:1.1.0-alpha03")
-                implementation("co.touchlab:kermit:2.0.0-RC4")
-
+                api("io.github.kevinnzou:compose-webview-multiplatform:1.7.8")
 
             }
 
@@ -114,7 +108,6 @@ kotlin {
                 implementation("io.insert-koin:koin-core:3.4.0")
                 implementation("io.insert-koin:koin-android:3.4.0")
                 implementation("androidx.compose.ui:ui-tooling-preview-android:1.5.4")
-                implementation("androidx.datastore:datastore-preferences:1.0.0")
 
             }
         }

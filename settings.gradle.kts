@@ -1,4 +1,4 @@
-rootProject.name = "MyApplication"
+rootProject.name = "WebView Multiplatform"
 
 include(":androidApp")
 include(":shared")

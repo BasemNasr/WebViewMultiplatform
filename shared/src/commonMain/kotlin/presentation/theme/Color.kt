@@ -21,6 +21,6 @@ val Gold = Color(0xFFFFBF51)
 val grayTextColor = Color(0xFF8E8EA9)
 val grayBackground = Color(0xFFF0F0F6)
 val BorderColor = Color(0xFFE9E8F8)
-val PrimaryColor = Color(0xFFDB3022)
+val PrimaryColor = Color(0xFF2F3E8F)
 val textColorSemiBlack = Color(0xFF222222)
 

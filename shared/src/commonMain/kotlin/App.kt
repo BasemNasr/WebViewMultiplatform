@@ -1,15 +1,9 @@
-
 import androidx.compose.foundation.shape.AbsoluteCutCornerShape
-
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
-
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.navigator.Navigator
-import core.Context
-import di.appModule
-import org.koin.compose.KoinApplication
 import presentation.screens.splash.SplashScreen
 
 @Composable
@@ -29,15 +23,10 @@ fun StoreAppTheme(
 }
 
 @Composable
-fun App(context:Context) {
-    KoinApplication(application = {
-        modules(appModule(context))
-    }) {
-        StoreAppTheme {
-            Navigator(SplashScreen())
-        }
+fun App() {
+    StoreAppTheme {
+        Navigator(SplashScreen())
     }
-
 }
 
 
